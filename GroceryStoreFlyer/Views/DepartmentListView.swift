@@ -11,7 +11,12 @@ struct DepartmentListView: View {
     var body: some View {
         NavigationStack {
             List(thisWeeksFlyer.departments) {
-                currentDepartment in NavigationLink {} label: { }
+                currentDepartment in NavigationLink {
+                    FoodItemsListView(departmentToShow: currentDepartment)
+                } label: {
+                    Text(currentDepartment.name)
+                }
+
             }
             .navigationTitle("This Week's Flyer")
         }
