@@ -13,6 +13,10 @@ struct FoodItemsListView: View {
         List(departmentToShow.items){
             currentItem in
             Text(currentItem.name)
+            Image(currentItem.image)
+                .resizable()
+                .scaledToFit()
+            
         }
         .navigationTitle(departmentToShow.name)
     }
